@@ -14,7 +14,6 @@ exports.create = (req, res) => {
         req.body.title || "Untitled Note", 
         req.body.content
     );
-    
     try{
         DataBase.saveNote(note);
         res.send(note);

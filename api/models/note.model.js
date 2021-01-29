@@ -1,3 +1,3 @@
-module.exports = (title,note)=>{
-    return {title,note};
+module.exports = (title,content)=>{
+    return {title,content};
 }

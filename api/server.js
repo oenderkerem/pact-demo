@@ -1,13 +1,9 @@
 const express = require('express');
 const app = express();
-
-var bodyParser = require('body-parser');
-
+const bodyParser = require('body-parser');
 // configure the app to use bodyParser()
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }))
 app.get('/', (req, res) => {
     res.send("<h1>Hello Pact Demo</h1>"
         + "<div>"
