@@ -1,6 +1,6 @@
 const Note = require('../models/note.model.js');
 const DataBase = require('../persistancy/databaseSimulator');
-
+const RabbitMQ = require('../services/rabbitmq.service');
 // Create and Save a new Note
 exports.create = (req, res) => {
     if(!req.body.content) {
@@ -16,6 +16,7 @@ exports.create = (req, res) => {
     );
     try{
         DataBase.saveNote(note);
+        RabbitMQ.publish('pact-demo',JSON.stringify(note));
         res.send(note);
     }catch(err) {
         res.status(500).send({

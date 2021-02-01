@@ -4,12 +4,13 @@
   "description": "simple api for demonstration ",
   "main": "server.js",
   "scripts": {
-    "start":"node server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "oenderkerem",
   "license": "",
   "dependencies": {
+    "amqplib": "^0.6.0",
     "express": "^4.17.1"
   }
 }
